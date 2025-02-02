@@ -1,27 +1,37 @@
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar'; // Import Navbar
+import Hero from './pages/Hero';
+import LongForm from './pages/Longform';
+import ShortForm from './pages/Shortform';
+import Photography from './pages/Photography';
+import Code from './pages/Code';
+import Music from './pages/Music';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
+import './index.css';
+
+const App: React.FC = () => {
   return (
-    <>
- <div className="grid place-items-center min-h-screen">
-  <div className="card bg-base-100 w-96 shadow-xl">
-    <figure>
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Shoes"
-      />
-    </figure>
-    <div className="card-body">
-      <h2 className="card-title">Shoes!</h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
-      <div className="card-actions justify-end">
-        <button className="btn btn-primary">Buy Now</button>
-      </div>
-    </div>
-  </div>
-</div>
+    <Router>
+      {/* Navbar stays on top across all pages */}
+      <Navbar />
 
-    </>
-  )
-}
+      {/* Routes for page navigation */}
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/LongForm" element={<LongForm />} />
+        <Route path="/ShortForm" element={<ShortForm />} />
+        <Route path="/Photography" element={<Photography />} />
+        <Route path="/Code" element={<Code />} />
+        <Route path="/Music" element={<Music />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
+
