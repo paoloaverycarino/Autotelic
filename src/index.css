@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+
+
 @font-face {
     font-family: "NeueMontreal";
     src: url("/fonts/NeueMontreal-Bold.otf") format("opentype"); /* Adjust the path as necessary */

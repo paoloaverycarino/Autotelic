@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar'; // Import Navbar
+import Navbar from './components/Navbar';
 import Hero from './pages/Hero';
 import LongForm from './pages/Longform';
 import ShortForm from './pages/Shortform';
@@ -15,10 +15,7 @@ import './index.css';
 const App: React.FC = () => {
   return (
     <Router>
-      {/* Navbar stays on top across all pages */}
-      <Navbar />
-
-      {/* Routes for page navigation */}
+      <Navbar />  
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/LongForm" element={<LongForm />} />
